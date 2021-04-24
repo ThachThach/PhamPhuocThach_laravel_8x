@@ -6,8 +6,13 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use App\Models\Trainers;
 
-class Controller extends BaseController
+class TrainersController extends Controller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    public function trainers() {
+        $obj = new Trainers();
+        $trainers= $obj->paginate(20);
+        return view('trainers', ['trainers' => $trainers]);
+    }
 }

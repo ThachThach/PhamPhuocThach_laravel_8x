@@ -27,45 +27,45 @@
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
       <h5 class="my-0 mr-md-auto font-weight-normal">Wed 2</h5>
       <nav class="my-2 my-md-0 mr-md-3">
-             <a class="p-2 text-dark" href="http://127.0.0.1:8000/">Home</a>
+           <a class="p-2 text-dark" href="http://127.0.0.1:8000/">Home</a>
           <a class="p-2 text-dark" href="companies">Companies</a>
         <a class="p-2 text-dark" href="trainers">Trainers</a>
-        <a class="p-2 text-dark" href="search">Search</a>
+          <a class="p-2 text-dark" href="search">Search</a>
+         
+        
       </nav>
       
     </div>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Companies</h1>
-      <p class="lead">List of Companies</p>
+      <h1 class="display-4">Trainers</h1>
+      <p class="lead">List of Trainers</p>
       <table class="table">
   <thead>
     <tr>
-  <th scope="col">Company_id</th>
-      <th scope="col">Company_name</th>
-      <th scope="col">Company_wed</th>
-      <th scope="col">Company_address</th>
-        <th scope="col">Company_code</th>
-          <th scope="col">Company_phone</th>
+  <th scope="col">Trainers_id</th>
+      <th scope="col">Trainers_name</th>
+      <th scope="col">Trainers_email</th>
+          <th scope="col">Trainers_phone</th>
+           <th scope="col">Company_id</th>
     </tr>
   </thead>
   <tbody>
-      
-      @foreach($companies as $company):
-    <tr>
-      <th scope="row">{!! $company->company_id !!}</th>
-       <th scope="row">{!! $company->company_name !!}</th>
-        <th scope="row">{!! $company->company_web !!}</th>
-      <th scope="row">{!! $company->company_address !!}</th>
-       <th scope="row">{!! $company->company_code !!}</th>
-        <th scope="row">{!! $company->company_phone !!}</th>
-    </tr>
-    @endforeach
+     
+        @foreach($trainers as $trainer):
+      <tr>
+        <th scope="row">{!! $trainer->trainer_id !!}</th>
+         <th scope="row">{!! $trainer->trainer_name !!}</th>
+          <th scope="row">{!! $trainer->trainer_email !!}</th>
+        <th scope="row">{!! $trainer->trainer_phone !!}</th>
+         <th scope="row">{!! $trainer->company_id !!}</th>
+      </tr>
+      @endforeach
+  
   </tbody>
 </table>
-      {{ $companies->links() }}
     </div>
-
+ {{ $trainers->links() }}
     <div class="container">
       
 

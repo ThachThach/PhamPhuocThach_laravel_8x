@@ -16,7 +16,7 @@ class Trainers extends Migration
         Schema::create('trainers', function (Blueprint $table) {
             $table->integer('trainer_id',11);
             $table->string('trainer_name',55);
-            $table->string('traniner_email',255);
+            $table->string('trainer_email',255);
             $table->string('trainer_phone',55);
             $table->integer('company_id', $autoIncrement=false);
         });

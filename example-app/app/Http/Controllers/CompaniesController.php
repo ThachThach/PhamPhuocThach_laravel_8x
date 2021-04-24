@@ -7,7 +7,13 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
-class Controller extends BaseController
+use App\Models\Companies;
+
+class CompaniesController extends Controller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    public function companies() {
+        $obj = new Companies();
+        $companies = $obj->paginate(50);
+        return view('companies', ['companies' => $companies]);
+    }
 }
