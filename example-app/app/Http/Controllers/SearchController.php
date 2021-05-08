@@ -7,13 +7,13 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
+use \App\Models\Companies;
 
-use App\Models\Trainers;
 
 class SearchController extends Controller
 {
     public function search(Request $request){
-        $obj = new Trainers();
+        $obj = new Companies();
         if($request->input('query')){
             $key = $request->input('query');
             $search = $obj ->search($key);

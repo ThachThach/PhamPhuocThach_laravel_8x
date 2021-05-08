@@ -30,7 +30,14 @@
            <a class="p-2 text-dark" href="http://127.0.0.1:8000/">Home</a>
           <a class="p-2 text-dark" href="companies">Companies</a>
         <a class="p-2 text-dark" href="trainers">Trainers</a>
-          <a class="p-2 text-dark" href="search">Search</a>
+        <br>
+         {{ Form::label('category_id', 'Category :')}}
+{!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
+          <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+     
+    </form>
          
         
       </nav>
@@ -43,18 +50,17 @@
       <table class="table">
   <thead>
     <tr>
-  <th scope="col">Categories_id</th>
-      <th scope="col">Categories_name</th>
+  <th scope="col">Company_id</th>
+      <th scope="col">Company_name</th>
+      <th scope="col">Company_wed</th>
+      <th scope="col">Company_address</th>
+        <th scope="col">Company_code</th>
+          <th scope="col">Company_phone</th>
+          <th scope="col">Categories_id</th>
+      
     </tr>
   </thead>
   <tbody>
-     
-        @foreach($categories as $categories):
-      <tr>
-        <th scope="row">{!! $categories->categories_id !!}</th>
-         <th scope="row">{!! $categories->categories_name !!}</th>
-      </tr>
-      @endforeach
   
   </tbody>
 </table>
