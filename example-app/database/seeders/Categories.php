@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class Trainers extends Seeder
+
+class Categories extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,12 +17,9 @@ class Trainers extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 1000; $i++){
-            DB::table('trainers')->insert([
-                'trainer_name' => 'Thach',
-                'trainer_email' => 'thachhaise@gmail.com',
-                'trainer_phone' => '123456789',
-                'company_id' => rand(1, 1000),
+         for ($i = 0; $i < 100; $i++){
+            DB::table('categories')->insert([
+                'categories_name' => 'ABC'."$i",
             ]);
         }
     }

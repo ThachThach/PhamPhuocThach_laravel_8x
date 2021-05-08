@@ -16,13 +16,14 @@ class Companies extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 1000000; $i++){
+        for ($i = 0; $i < 1000; $i++){
             DB::table('companies')->insert([
                 'company_name' => 'ThachThach',
                 'company_web' => 'facebook.com',
                 'company_address' => 'Binh Thuan',
                 'company_code' => '123',
                 'company_phone' => '123456789',
+                 'categories_id' => rand(1, 100),
             ]);
         }
     }
