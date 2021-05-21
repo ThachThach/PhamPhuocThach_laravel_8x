@@ -44,7 +44,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" name="tim" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
      
@@ -62,7 +62,7 @@
   </thead>
   <tbody>
       @isset($key)
-            @foreach($search as $trainer):
+            @foreach($search1 as $trainer):
           <tr>
             <th scope="row">{!! $trainer->trainer_id !!}</th>
              <th scope="row">{!! $trainer->trainer_name !!}</th>

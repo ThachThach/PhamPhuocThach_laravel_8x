@@ -31,10 +31,13 @@
           <a class="p-2 text-dark" href="companies">Companies</a>
         <a class="p-2 text-dark" href="trainers">Trainers</a>
         <br>
-         {{ Form::label('category_id', 'Category :')}}
+        {{ Form::open([
+]) }}
+{{ Form::label('category_id', 'Category :')}}
 {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
+{{ Form::close() }}
           <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" name="tim" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
      
     </form>
@@ -46,13 +49,13 @@
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Categories</h1>
-      <p class="lead">List of Categoryes</p>
+      <p class="lead">List of Company</p>
       <table class="table">
   <thead>
     <tr>
   <th scope="col">Company_id</th>
       <th scope="col">Company_name</th>
-      <th scope="col">Company_wed</th>
+      <th scope="col">Company_web</th>
       <th scope="col">Company_address</th>
         <th scope="col">Company_code</th>
           <th scope="col">Company_phone</th>
@@ -61,7 +64,20 @@
     </tr>
   </thead>
   <tbody>
-  
+   @isset($key)
+            @foreach($search as $company):
+          <tr>
+            <th scope="row">{!! $company->company_id !!}</th>
+             <th scope="row">{!! $company->company_name !!}</th>
+              <th scope="row">{!! $company->company_web !!}</th>
+            <th scope="row">{!! $company->company_address !!}</th>
+             <th scope="row">{!! $company->company_code !!}</th>
+             <th scope="row">{!! $company->company_phone !!}</th>
+             <th scope="row">{!! $company->categories_id !!}</th>
+          </tr>
+          </tr>
+          @endforeach
+    @endisset
   </tbody>
 </table>
     </div>

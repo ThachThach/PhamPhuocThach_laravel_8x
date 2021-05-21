@@ -27,7 +27,7 @@ Route::get('/trainers', [TrainersController::class, 'trainers']);
 
 Route::get('/search', [SearchController::class, 'search']);
 
-Route::get('/categories', [CategoriesController::class, 'categories']);
+Route::get('/categories', [CategoriesController::class,'categories']);
 
 
 
