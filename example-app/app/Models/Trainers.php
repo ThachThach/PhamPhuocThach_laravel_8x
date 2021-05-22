@@ -8,14 +8,11 @@ class Trainers extends Model {
 
     protected $table = 'trainers';
     
-     public function search($input) {
-        $comapnies = self::where('trainer_name', 'LIKE', "%{$input}%")
-                ->paginate(10);
-
-        return $comapnies;
-    }
-
     
+   public function companyTrainer()
+    {
+        return $this->belongsTo(Companies::class,'company_id','company_id');
+    }
     
    
     

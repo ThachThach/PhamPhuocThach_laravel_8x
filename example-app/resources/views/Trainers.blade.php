@@ -48,17 +48,19 @@
       <th scope="col">Trainers_email</th>
           <th scope="col">Trainers_phone</th>
            <th scope="col">Company_id</th>
+            <th scope="col">Company_name</th>
     </tr>
   </thead>
   <tbody>
      
-        @foreach($trainers as $trainer):
+        @foreach($trainers as $trainer1):
       <tr>
-        <th scope="row">{!! $trainer->trainer_id !!}</th>
-         <th scope="row">{!! $trainer->trainer_name !!}</th>
-          <th scope="row">{!! $trainer->trainer_email !!}</th>
-        <th scope="row">{!! $trainer->trainer_phone !!}</th>
-         <th scope="row">{!! $trainer->company_id !!}</th>
+        <th scope="row">{!! $trainer1->trainer_id !!}</th>
+         <th scope="row">{!! $trainer1->trainer_name !!}</th>
+          <th scope="row">{!! $trainer1->trainer_email !!}</th>
+        <th scope="row">{!! $trainer1->trainer_phone !!}</th>
+         <th scope="row">{!! $trainer1->company_id !!}</th>
+           <th scope="row">{!! $trainer1->companyTrainer['company_name'] !!}</th>
       </tr>
       @endforeach
   

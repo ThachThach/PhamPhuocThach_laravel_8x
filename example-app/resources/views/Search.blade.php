@@ -43,32 +43,45 @@
         <a class="nav-link disabled" href="trainers">Trainers</a>
       </li>
     </ul>
+      
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" name="tim" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+{{ Form::open([
+   
+]) }}
+{{ Form::label('category_id', 'Category :')}}
+{!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
+{{ Form::close() }}
      
   </div>
 </nav>
          <table class="table">
   <thead>
     <tr>
-  <th scope="col">Trainers_id</th>
-      <th scope="col">Trainers_name</th>
-      <th scope="col">Trainers_email</th>
-          <th scope="col">Trainers_phone</th>
-           <th scope="col">Company_id</th>
+  <th scope="col">Companies_id</th>
+      <th scope="col">Companies_name</th>
+      <th scope="col">Companies_web</th>
+          <th scope="col">Companies_address</th>
+           <th scope="col">Companies_code</th>
+            <th scope="col">Companies_phone</th>
+             <th scope="col">Categories_id</th>
+           
     </tr>
   </thead>
   <tbody>
       @isset($key)
-            @foreach($search1 as $trainer):
+            @foreach($search as $company):
           <tr>
-            <th scope="row">{!! $trainer->trainer_id !!}</th>
-             <th scope="row">{!! $trainer->trainer_name !!}</th>
-              <th scope="row">{!! $trainer->trainer_email !!}</th>
-            <th scope="row">{!! $trainer->trainer_phone !!}</th>
-             <th scope="row">{!! $trainer->company_id !!}</th>
+            <th scope="row">{!! $company->company_id !!}</th>
+             <th scope="row">{!! $company->company_name !!}</th>
+              <th scope="row">{!! $company->company_web !!}</th>
+            <th scope="row">{!! $company->company_address !!}</th>
+             <th scope="row">{!! $company->company_code !!}</th>
+             <th scope="row">{!! $company->company_phone !!}</th>
+             <th scope="row">{!! $company->categories_id !!}</th>
+          </tr>
           </tr>
           @endforeach
     @endisset

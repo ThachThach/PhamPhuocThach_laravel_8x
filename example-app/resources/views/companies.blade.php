@@ -48,11 +48,13 @@
         <th scope="col">Company_code</th>
           <th scope="col">Company_phone</th>
           <th scope="col">Categories_id</th>
+          <th scope="col">Trainer_name</th>
     </tr>
   </thead>
   <tbody>
       
       @foreach($companies as $company):
+  
     <tr>
       <th scope="row">{!! $company->company_id !!}</th>
        <th scope="row">{!! $company->company_name !!}</th>
@@ -61,8 +63,12 @@
        <th scope="row">{!! $company->company_code !!}</th>
         <th scope="row">{!! $company->company_phone !!}</th>
         <th scope="row">{!! $company->categories_id !!}</th>
+         <th scope="row">{!! $company->trainer['trainer_name'] !!}</th>
+         
     </tr>
     @endforeach
+
+
   </tbody>
 </table>
       {{ $companies->links() }}

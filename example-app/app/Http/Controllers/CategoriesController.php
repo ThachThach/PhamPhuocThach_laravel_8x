@@ -13,22 +13,12 @@ use App\Models\Categories;
 
 class CategoriesController extends Controller
 {
-    public function categories(Request $request) {
+    public function categories() {
         
-         $obj = new Categories();
-       $categories = $obj-> pluck('categories_id','categories_id');
-       
-       
-         $company = new Companies();
-         
-          if($request->input('tim')){
-            $key = $request->input('tim');
-            
-            $search = $company ->search($key);
-          return view('categories',['search'=>$search,'key'=>$key,'categories' => $categories]);
-        }
-           return view('categories', ['categories' => $categories,[]]);
-       
+        
+       $obj = new Categories();
+        $companies = $obj->paginate(50);
+        return view('categories', ['categories' => $companies]);
          
        
        

@@ -17,9 +17,12 @@ class Categories extends Seeder
      */
     public function run()
     {
-         for ($i = 0; $i < 100; $i++){
+         for ($i = 0; $i < 5; $i++){
             DB::table('categories')->insert([
-                'categories_name' => 'ABC'."$i",
+                ['categories_name' => 'Mang may tinh'],
+                    ['categories_name'=>'Kiem thu phan men'],
+                    ['categories_name' => 'Phat trien ung dung wed'],
+                ['categories_name'=>'Phat trien ung dung di dong'],
             ]);
         }
     }

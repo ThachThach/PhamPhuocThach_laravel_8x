@@ -14,6 +14,8 @@ class CompaniesController extends Controller
     public function companies() {
         $obj = new Companies();
         $companies = $obj->paginate(50);
-        return view('companies', ['companies' => $companies]);
+        $trainer = \App\Models\Trainers::all();
+        
+    return view('companies', ['companies' => $companies,'trainer'=>$trainer]);
     }
 }

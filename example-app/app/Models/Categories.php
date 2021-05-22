@@ -9,7 +9,9 @@ class Categories extends Model
 {
     protected $table = 'categories';
     
-    
+    public function companyCategory() {
+        return $this->hasMany(Companies::class,'categories_id','categories_id');
+    }
 }
 
 

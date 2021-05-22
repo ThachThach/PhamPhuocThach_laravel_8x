@@ -12,13 +12,21 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
 {
     public function search(Request $request){
-        $obj = new \App\Models\Trainers();
-        if($request->input('tim')){
+        $obj = new \App\Models\Categories();
+       $categories = $obj-> pluck('categories_id','categories_id');
+       
+       
+         $company = new \App\Models\Companies();
+         
+          if($request->input('tim')){
             $key = $request->input('tim');
-            $search = $obj ->search($key);
-            return view('search',['search'=>$search,'key'=>$key]);
+            
+            
+            
+            $search = $company ->search($key);
+          return view('search',['search'=>$search,'key'=>$key,'categories' => $categories]);
         }
-        return view('search',[]);
+           return view('search', ['categories' => $categories,[]]);
 }
 
 
