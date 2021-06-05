@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class seedCompany_has_category extends Seeder
+class user_has_group extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,12 +16,10 @@ class seedCompany_has_category extends Seeder
      */
     public function run()
     {
-        $limit = 20;
-
-        for ($i = 0; $i < $limit; $i++){
-            DB::table('company_has_category')->insert([
-                'company_id' => rand(1, 20),
-                'category_id' => rand(1, 20),
+        for ($i=0; $i < 50; $i++){
+            DB::table('user_has_group')->insert([          
+            'user_id' => '1',
+            'group_id' => '1',
             ]);
         }
     }
