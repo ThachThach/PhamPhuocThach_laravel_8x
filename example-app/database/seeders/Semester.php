@@ -6,15 +6,21 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-class DatabaseSeeder extends Seeder
+
+class Semester extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        for ($i=0; $i < 10;$i++){ 
+            DB::table('Semester')->insert([
+                'semester_name' => "2019", 
+                
+            ]);
+        }
     }
 }

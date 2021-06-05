@@ -17,13 +17,16 @@ class Categories extends Seeder
      */
     public function run()
     {
-         for ($i = 0; $i < 5; $i++){
-            DB::table('categories')->insert([
-                ['categories_name' => 'Mang may tinh'],
-                    ['categories_name'=>'Kiem thu phan men'],
-                    ['categories_name' => 'Phat trien ung dung wed'],
-                ['categories_name'=>'Phat trien ung dung di dong'],
-            ]);
-        }
+        $queryInsert='insert into categories values (null,?);';
+        DB::insert($queryInsert,['HH1']);
+        DB::insert($queryInsert,['HH2']);
+        DB::insert($queryInsert,['HH3']);
+        DB::insert($queryInsert,['HH4']);
+        DB::insert($queryInsert,['HH5']);
+        DB::insert($queryInsert,['HH6']);
+        DB::insert($queryInsert,['HH7']);
+        DB::insert($queryInsert,['HH8']);
+        DB::insert($queryInsert,['HH9']);
+        DB::insert($queryInsert,['HH10']);
     }
 }

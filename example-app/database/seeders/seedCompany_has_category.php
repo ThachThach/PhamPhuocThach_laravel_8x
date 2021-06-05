@@ -3,11 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
-class Trainers extends Seeder
+class seedCompany_has_category extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,11 +13,12 @@ class Trainers extends Seeder
      */
     public function run()
     {
-        $limit = 10;
+        $limit = 20;
 
         for ($i = 0; $i < $limit; $i++){
-            DB::table('trainers')->insert([
-                'company_id' => $i+1,
+            DB::table('company_has_category')->insert([
+                'company_id' => rand(1, 20),
+                'category_id' => rand(1, 20),
             ]);
         }
     }

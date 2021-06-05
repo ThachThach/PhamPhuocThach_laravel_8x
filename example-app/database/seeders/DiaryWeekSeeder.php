@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class Trainers extends Seeder
+class DiaryWeekSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,12 +16,13 @@ class Trainers extends Seeder
      */
     public function run()
     {
-        $limit = 10;
-
-        for ($i = 0; $i < $limit; $i++){
-            DB::table('trainers')->insert([
-                'company_id' => $i+1,
+        for ($i = 0; $i < 7; $i++){
+            DB::table('diary_week')->insert([
+                'week' => $i + 1,
+                'firstday' => "23-5-01",
+                'lastday' => "23-5-01",
+                'diary_id' => $i + 1,
             ]);
-        }
     }
+}
 }
